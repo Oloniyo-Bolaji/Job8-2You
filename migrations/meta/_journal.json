@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1749660904352,
+      "tag": "0000_abandoned_micromax",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1749661534862,
+      "tag": "0001_friendly_rafael_vega",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1749740799703,
+      "tag": "0002_luxuriant_pyro",
+      "breakpoints": true
+    }
+  ]
+}

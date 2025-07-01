@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+body{
+  background: #007bff10;
+}
+.categories::-webkit-scrollbar{
+  display: none;
+}
+.posts-page{
+  padding: 20px 40px;
+}
