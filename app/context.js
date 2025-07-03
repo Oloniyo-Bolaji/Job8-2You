@@ -220,6 +220,7 @@ const RoleProvider = ({ children }) => {
         job.title.toLowerCase().includes(value.toLowerCase()) ||
         job.company.toLowerCase().includes(value.toLowerCase())
     )
+    setJobSearch("")
     setPostedJobs(searched)
   }
 
