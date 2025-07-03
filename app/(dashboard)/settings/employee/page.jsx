@@ -9,6 +9,7 @@ import { UploadButton } from '@uploadthing/react'
 import '../../dashboard.css'
 import { RoleContext } from '@app/context'
 import Loading from '@components/Loading'
+import Upload from '@components/Upload'
 
 const EmployeeSettings = () => {
   const { data: session } = useSession()
@@ -131,29 +132,15 @@ const EmployeeSettings = () => {
         </div>
         <div>
           <label className="text-[15px] text-[#ccc]">Upload your resume</label>
-          <UploadButton
-            endpoint="resumeUploader"
-            onClientUploadComplete={(res) => {
-              setUserDetails((prev) => ({
-                ...prev,
-                resumeURL: res[0].ufsUrl || '',
-              }))
-            }}
-            onUploadError={(err) => {
-              alert('Upload failed: ' + err.message)
-            }}
-            appearance={{
-              container: {
-                marginTop: '1rem',
-              },
-              allowedContent: {
-                display: 'none', // hide allowed file types
-              },
-            }}
-          />
+          <Upload onSuccess={(resumeUrl) => setUserDetails({...userDetails, resumeURL: resumeUrl})} />
         </div>
         <div className="m-auto">
-          <button className="w-[80px] bg-[#007bff] text-[white] border-[0] rounded-[5px] p-[5px]"onClick={saveDetails}>{saving ? <Loading /> : 'Save'}</button>
+          <button
+            className="w-[80px] bg-[#007bff] text-[white] border-[0] rounded-[5px] p-[5px]"
+            onClick={saveDetails}
+          >
+            {saving ? <Loading /> : 'Save'}
+          </button>
         </div>
       </div>
     </div>

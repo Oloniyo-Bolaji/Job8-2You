@@ -117,28 +117,28 @@ const EmployerProfile = () => {
             </header>
             <main className="flex flex-col h-[80%] w-full gap-[10px]">
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Name</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.name}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Name</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.name}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Email</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.email}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Email</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.email}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Address</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.address}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Address</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.address}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Description</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.description}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Description</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.description}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Location</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.companyLocation}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Location</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.companyLocation}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Year Founded</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.year}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Year Founded</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.year}</p>
               </div>
             </main>
           </section>

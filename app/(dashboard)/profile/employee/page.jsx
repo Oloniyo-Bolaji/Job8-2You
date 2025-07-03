@@ -9,7 +9,7 @@ import { RoleContext } from '@app/context'
 import { Skeleton } from '@mui/material'
 
 const EmployeeProfile = () => {
-  const { data: session } = useSession()
+ const { data: session } = useSession()
   const { user } = useContext(RoleContext)
   const [loading, setLoading] = useState(true)
 
@@ -22,7 +22,7 @@ const EmployeeProfile = () => {
   }, [user])
   return (
     <div>
-      {loading ? (
+      {session ? (
         <div className="w-full flex sm:flex-row flex-col gap-[10px] h-full">
           <aside className="sm:w-[35%] w-[100%]  rounded-[10px] h-full">
             <div className="flex justify-center items-center flex-col p-[30px]">
@@ -115,25 +115,25 @@ const EmployeeProfile = () => {
               </Link>
             </header>
             <main className="flex flex-col h-[80%] w-full gap-[10px]">
-              <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Name</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.name}</p>
+              <div className="flex gap-[10px] ">
+                <label className="sm:w-[25%] w-[15%] font-bold">Name</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.name}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Email</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.email}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Email</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.email}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Headline</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.headline}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Headline</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.headline}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Bio</label>
-                <p className="w-[70%] text-[15px] text-[#007bff]">{user.bio}</p>
+                <label className="sm:w-[25%] w-[15%] font-bold">Bio</label>
+                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.bio}</p>
               </div>
               <div className="flex gap-[10px]">
-                <label className="w-[25%] font-bold">Skills</label>
-                <p className="w-[70%] text-[#007bff] text-[15px]">
+                <label className="sm:w-[25%] w-[15%] font-bold">Skills</label>
+                <p className="sm:w-[70%] w-[80%] text-[#007bff] text-[15px]">
                   {user.skills?.map((skill, index) => (
                     <li key={index}>{skill}</li>
                   ))}

@@ -1,12 +1,12 @@
 'use client'
 
 import React, { useContext, useEffect, useState } from 'react'
-import { useSession } from 'next-auth/react'
+//import { useSession } from 'next-auth/react'
 import JobCard from '@components/JobCard'
 import { RoleContext } from '@app/context'
 
 const Jobs = () => {
-  const { data: session } = useSession()
+  //const { data: session } = useSession()
   const { userJobs } = useContext(RoleContext)
 
   return (

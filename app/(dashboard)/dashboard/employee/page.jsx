@@ -52,7 +52,7 @@ const Employee = () => {
     }
 
     fetchJobs()
-  }, [session, user])
+  }, [user])
 
   const removeRecommended = (id) => {
     const newRecommended = recommendedJobs.filter((job) => job.id !== id)
@@ -93,7 +93,7 @@ const Employee = () => {
           <header className="rounded-[10px] w-full h-[50px] flex gap-[5px] items-center bg-[white] py-[0] px-[10px]">
             <h4 className="font-bold">Welcome back, {user?.name}</h4>
           </header>
-          <section className="counts w-full py-[5px] px-[0] grid grid-cols-2 sm:grid-cols-4 gap-[10px]">
+          <section className="counts w-full py-[5px] px-[0] grid grid-cols-2 sm:grid-cols-4 sm:gap-[10px] gap-[5px]">
             <Count count={user?.profileViews} title={'Profile Visits'} colour={'red'} />
             <Count count={rejected.length} title={'Rejected Applications'} colour={'green'} />
             <Count count={applications.length} title={'Applications Submitted'} colour={'orange'} />
@@ -107,7 +107,7 @@ const Employee = () => {
           )}
           <section className="bg-[white] rounded-[10px] p-[5px]">
             <h3 className="m-[5px] font-bold text-[15px]">Recommended For You</h3>
-            <div className="grid grid grid-cols-2 sm:grid-cols-4 w-full gap-[10px]">
+            <div className="grid grid grid-cols-1 sm:grid-cols-2 w-full gap-[10px]">
               {recommendedJobs?.slice(0, 4).map((job, index) => (
                 <RecommendedJob key={index} job={job} removeRecommended={removeRecommended} />
               ))}

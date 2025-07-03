@@ -93,61 +93,49 @@ const Job = () => {
             <Skeleton variant="text" sx={{ fontSize: '1rem', width: '200px' }} />
           </div>
           <div className="w-full flex flex-col gap-[10px]">
-            <div className='w-[300px] sm:w-[1000px]'>
+            <div className="w-[300px] sm:w-[1000px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100%' }} />
             </div>
-            <div className='w-[200px] sm:w-[400px]'>
+            <div className="w-[200px] sm:w-[400px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100%' }} />
             </div>
-            <div className='w-[150px] sm:w-[350px]'>
+            <div className="w-[150px] sm:w-[350px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100%' }} />
             </div>
-            <div className='w-[300px] sm:w-[850px]'>
+            <div className="w-[300px] sm:w-[850px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100%' }} />
             </div>
-            <div className='w-[100px] sm:w-[500px]'>
+            <div className="w-[100px] sm:w-[500px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100%' }} />
             </div>
-             <div className='w-[300px] sm:w-[750px]'>
+            <div className="w-[300px] sm:w-[750px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100%' }} />
             </div>
-             <div className='w-[120px] sm:w-[400px]'>
+            <div className="w-[120px] sm:w-[400px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
             </div>
-             <div className='w-[300px] sm:w-[700px]'>
+            <div className="w-[300px] sm:w-[700px]">
               <Skeleton variant="text" sx={{ fontSize: '1rem', width: '250px' }} />
             </div>
           </div>
         </div>
       ) : (
         <div className="w-full py-[20px] px-[40px] flex flex-col gap-[10px]">
-          <div className="jobBtn">
-            <button
-              onClick={() => {
-                if (job.id) {
-                  router.push('/')
-                } else {
-                  console.log(err)
-                }
-              }}
-            >
-              Back Home
-            </button>
-          </div>
           <div className="w-full relative">
             <div className="h-[200px] bg-[#007bff] rounded-t-[10px]"></div>
-            <div className="absolute bottom-[-5%] left-[50%]">
+            <div className="absolute bottom-[3%] left-1/2 transform -translate-x-1/2">
               {job.user?.image && (
                 <Image
                   src={job.user?.image}
                   alt={job.user?.name}
                   width={60}
                   height={60}
-                  className="rounded-[50%]"
+                  className="rounded-full"
                 />
               )}
             </div>
           </div>
+
           <div className="flex flex-col justify-center text-center items-center gap-[10px]">
             <h3 className="font-bold">{job.title}</h3>
             <div className="flex gap-[5px] text-[15px]">

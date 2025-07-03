@@ -14,8 +14,7 @@ const Header = () => {
     <header className="w-full h-[300px] bg-[url(/office.jpg)] bg-center bg-cover bg-no-repeat z-[1]">
       <div className="header h-full bg-[#2c3e5060] flex items-center justify-center flex-col gap-[5px] z-[2]">
         <p className="p-[5px] border-x-[0] border-y-[1.5px] border-y-[white] border-solid text-[18px] text-[white]">Find your Dream Tech Job, Stress free</p>
-        <span className='text-[15px]'>Explore thousands of opportunities around you</span>
-        <span className='text-[15px]'>Got vacancy?</span>
+        <span className='text-[15px] font-bold text-[#007bff]'>Explore thousands of opportunities around you</span>
       </div>
     </header>
   )

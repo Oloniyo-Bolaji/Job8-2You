@@ -5,7 +5,7 @@ import React from 'react'
 
 const RecommendedJob = ({ job, removeRecommended }) => {
   return (
-    <div style={{backgroundColor : "#007bff20"}} className="rounded-[10px] px-[5px] py-[10px] h-[150px] w-full flex justify-evenly ">
+    <div style={{backgroundColor : "#007bff20"}} className="rounded-[10px] px-[10px] py-[10px]  w-full flex justify-between ">
       <div>
         <h3 className="font-bold text-[15px] text-[#007bff]">{job.title}</h3>
         <p className="text-[13px]">{job.company}</p>

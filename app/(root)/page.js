@@ -60,13 +60,13 @@ export default function Home() {
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
                   </h3>
                   <ul className="categories flex w-full overflow-x-auto sm:flex-col sm:gap-[5px] gap-[10px] py-[5px] px-[10px] whitespace-nowrap">
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px"}} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem'  , width: "100px"}} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem'  , width: "100px"}} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
                   </ul>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Home() {
         <div className="home w-full">
           <Header />
           <main className="w-full flex flex-col-reverse sm:flex-row p-[20px] justify-between">
-            <section className="w-full sm:w-[65%] py-[10px] px-[30px]">
+            <section className="w-full sm:w-[65%] py-[10px] sm:px-[30px] px-[10px]">
               <h2 className="text-center font-bold text-[18px]">Available Jobs</h2>
               <div className="w-full grid grid-cols-1 gap-[15px]">
                 {!postedJobs ? (

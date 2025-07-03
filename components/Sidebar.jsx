@@ -22,8 +22,7 @@ const Sidebar = () => {
       <div className="w-full h-[20%] flex justify-center items-center">
         <div className="text-center">
           <Link href="/" className="font-bold text-[24px] text-[black] no-underline">
-          <IoMdHome className="sm:hidden block text-[30px] text-[#007bff]"/>
-            <p className="sm:block hidden">             
+            <p className="sm:block hidden">
               Jobs<span className=" text-[#007bff]">8/2</span>You
             </p>
           </Link>
@@ -31,6 +30,14 @@ const Sidebar = () => {
       </div>
 
       <div className="w-full flex flex-col gap-[25px]">
+        <li className="list-none">
+          <Link
+            href=""
+            className="hover:bg-[#007bff10] sm:hidden block flex items-center sm:justify-start justify-center text-[#007bff] text-[30px] gap-[8px] p-[5px] sm:text-[20px]"
+          >
+            <IoMdHome />         
+          </Link>
+        </li>
         <li className="list-none">
           <Link
             href={`/dashboard/${user.role}`}

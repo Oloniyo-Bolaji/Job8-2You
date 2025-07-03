@@ -30,16 +30,16 @@ const Navbar = () => {
   }, [session])
 
   return (
-    <nav className="flex justify-between items-center h-[70px] p-[30px] shadow-[2px_2px_4px_#007bff10]">
+    <nav className="flex justify-between items-center h-[70px] sm:p-[30px] p-[15px] shadow-[2px_2px_4px_#007bff10]">
       <div className="logo">
         <Link href="/" className="font-bold text-[24px] text-[black] no-underline">
           Jobs<span className=" text-[#007bff]">8/2</span>You
         </Link>
       </div>
       <div className="links flex items-center">
-        <div className='ml-[20px]'>
-          <Link href="/browsejobs" className="uppercase hover:text-[#007bff] text-[15px]">
-            Browse Jobs
+        <div className='sm:ml-[20px] ml-[10px]'>
+          <Link href="/browsejobs" className="uppercase hover:text-[#007bff] sm:text-[15px] text-[12px]">
+            Jobs
           </Link>
         </div>
         {session?.user ? (
@@ -57,8 +57,8 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
-          <div className='ml-[20px]'>
-            <button onClick={handleLogin} className="text-[15px] bg-[#007bff] text-[#fff] border-[0] py-[10px] px-[20px] cursor-pointer transition-colors duration-200 ease-in-out">
+          <div className='sm:ml-[20px] ml-[10px]'>
+            <button onClick={handleLogin} className="sm:text-[15px] text-[12px] bg-[#007bff] text-[#fff] border-[0] py-[10px] px-[20px] cursor-pointer transition-colors duration-200 ease-in-out">
               SIGN IN
             </button>
           </div>
