@@ -23,7 +23,7 @@ const EmployerProfile = () => {
 
   return (
     <div>
-      {loading ? (
+      {!session ? (
         <div className="w-full flex sm:flex-row flex-col gap-[10px] h-full">
           <aside className="sm:w-[35%] w-[100%] rounded-[10px] h-full">
             <div className="flex justify-center items-center flex-col p-[30px]">
@@ -117,28 +117,28 @@ const EmployerProfile = () => {
             </header>
             <main className="flex flex-col h-[80%] w-full gap-[10px]">
               <div className="flex gap-[10px]">
-                <label className="sm:w-[25%] w-[15%] font-bold">Name</label>
-                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.name}</p>
+                <label className="sm:w-[25%] font-bold">Name</label>
+                <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.name}</p>
               </div>
-              <div className="flex gap-[10px]">
-                <label className="sm:w-[25%] w-[15%] font-bold">Email</label>
-                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.email}</p>
+              <div className="flex gap-[10px] sm:flex-row flex-col">
+                <label className="sm:w-[25%] font-bold">Email</label>
+                <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.email}</p>
               </div>
-              <div className="flex gap-[10px]">
-                <label className="sm:w-[25%] w-[15%] font-bold">Address</label>
-                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.address}</p>
+              <div className="flex gap-[10px] sm:flex-row flex-col">
+                <label className="sm:w-[25%] font-bold">Address</label>
+                <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.address}</p>
               </div>
-              <div className="flex gap-[10px]">
-                <label className="sm:w-[25%] w-[15%] font-bold">Description</label>
-                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.description}</p>
+              <div className="flex gap-[10px] sm:flex-row flex-col">
+                <label className="sm:w-[25%] font-bold">Description</label>
+                <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.description}</p>
               </div>
-              <div className="flex gap-[10px]">
-                <label className="sm:w-[25%] w-[15%] font-bold">Location</label>
-                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.companyLocation}</p>
+              <div className="flex gap-[10px] sm:flex-row flex-col">
+                <label className="sm:w-[25%] font-bold">Location</label>
+                <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.companyLocation}</p>
               </div>
-              <div className="flex gap-[10px]">
-                <label className="sm:w-[25%] w-[15%] font-bold">Year Founded</label>
-                <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.year}</p>
+              <div className="flex gap-[10px] sm:flex-row flex-col">
+                <label className="sm:w-[25%] font-bold">Year Founded</label>
+                <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.year}</p>
               </div>
             </main>
           </section>

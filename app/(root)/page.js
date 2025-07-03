@@ -14,7 +14,16 @@ import { Skeleton } from '@mui/material'
 
 export default function Home() {
   const router = useRouter()
-  const { loading, fetchJobs, postedJobs, setPostedJobs, fetchUserJobs } = useContext(RoleContext)
+  const {
+    jobSearch,
+    setJobSearch,
+    searchJobs,
+    loading,
+    fetchJobs,
+    postedJobs,
+    setPostedJobs,
+    fetchUserJobs,
+  } = useContext(RoleContext)
 
   const [categories, setCategories] = useState([
     'Mobile Application Developer',
@@ -60,13 +69,13 @@ export default function Home() {
                     <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
                   </h3>
                   <ul className="categories flex w-full overflow-x-auto sm:flex-col sm:gap-[5px] gap-[10px] py-[5px] px-[10px] whitespace-nowrap">
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px"}} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem'  , width: "100px"}} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem'  , width: "100px"}} />
-                    <Skeleton variant="text" sx={{ fontSize: '1rem' , width: "100px" }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
+                    <Skeleton variant="text" sx={{ fontSize: '1rem', width: '100px' }} />
                   </ul>
                 </div>
               </div>
@@ -107,10 +116,19 @@ export default function Home() {
                 <div className="h-[35px]">
                   <input
                     type="text"
-                    placeholder="Search for Job.."
+                    placeholder="Search for Job by title or company"
+                    value={jobSearch}
+                    onClick={(e) => {
+                      setJobSearch(e.target.value)
+                    }}
                     className="w-[80%] h-full border-[1px] border-solid border-[black] outline-[0] rounded-[5px] placeholder:text-[15px] placeholder:p-[5px]"
                   />
-                  <button className="h-full w-[20%] p-[8px] text-[14px] text-[white] bg-[#007bff] rounded-[5px] border-[0]">
+                  <button
+                    onClick={() => {
+                      searchJobs(jobSearch)
+                    }}
+                    className="h-full w-[20%] p-[8px] text-[14px] text-[white] bg-[#007bff] rounded-[5px] border-[0]"
+                  >
                     Search
                   </button>
                 </div>

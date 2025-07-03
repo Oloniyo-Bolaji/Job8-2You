@@ -127,25 +127,25 @@ const userProfileProfile = () => {
             <section className="sm:w-[65%] w-[100%] bg-[white] rounded-[10px] gap-[5%] px-[20px] h-full">
               {user.role === 'employee' ? (
                 <main className="flex flex-col h-[80%] w-full gap-[10px] py-[20px]">
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Name</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.name}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Name</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.name}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Email</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.email}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Email</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.email}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Headline</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.headline}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Headline</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.headline}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Bio</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.bio}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Bio</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.bio}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Skills</label>
-                    <p className="sm:w-[70%] w-[80%] text-[#007bff] text-[15px]">
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Skills</label>
+                    <p className="sm:w-[70%] text-[#007bff] text-[15px]">
                       {user.skills?.map((skill, index) => (
                         <li key={index}>{skill}</li>
                       ))}
@@ -154,29 +154,29 @@ const userProfileProfile = () => {
                 </main>
               ) : (
                 <main className="flex flex-col h-[80%] w-full gap-[10px] py-[20px]">
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Name</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.name}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Name</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.name}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Email</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.email}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Email</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.email}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Address</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.address}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Address</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.address}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Description</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.description}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Description</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.description}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Location</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.companyLocation}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Location</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.companyLocation}</p>
                   </div>
-                  <div className="flex gap-[10px]">
-                    <label className="sm:w-[25%] w-[15%] font-bold">Year Founded</label>
-                    <p className="sm:w-[70%] w-[80%] text-[15px] text-[#007bff]">{user.year}</p>
+                  <div className="flex gap-[10px] sm:flex-row flex-col">
+                    <label className="sm:w-[25%]  font-bold">Year Founded</label>
+                    <p className="sm:w-[70%] text-[15px] text-[#007bff]">{user.year}</p>
                   </div>
                 </main>
               )}

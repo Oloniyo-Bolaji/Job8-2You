@@ -32,7 +32,7 @@ const Sidebar = () => {
       <div className="w-full flex flex-col gap-[25px]">
         <li className="list-none">
           <Link
-            href=""
+            href="/"
             className="hover:bg-[#007bff10] sm:hidden block flex items-center sm:justify-start justify-center text-[#007bff] text-[30px] gap-[8px] p-[5px] sm:text-[20px]"
           >
             <IoMdHome />         

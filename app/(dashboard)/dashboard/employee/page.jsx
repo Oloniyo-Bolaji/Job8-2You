@@ -93,7 +93,7 @@ const Employee = () => {
           <header className="rounded-[10px] w-full h-[50px] flex gap-[5px] items-center bg-[white] py-[0] px-[10px]">
             <h4 className="font-bold">Welcome back, {user?.name}</h4>
           </header>
-          <section className="counts w-full py-[5px] px-[0] grid grid-cols-2 sm:grid-cols-4 sm:gap-[10px] gap-[5px]">
+          <section className="counts w-full py-[5px] px-[0] grid grid-cols-1 sm:grid-cols-4 sm:gap-[10px] gap-[5px]">
             <Count count={user?.profileViews} title={'Profile Visits'} colour={'red'} />
             <Count count={rejected.length} title={'Rejected Applications'} colour={'green'} />
             <Count count={applications.length} title={'Applications Submitted'} colour={'orange'} />

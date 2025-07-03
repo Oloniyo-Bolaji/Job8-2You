@@ -5,10 +5,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
 
-
-
 const RoleContext = createContext()
-
 
 const RoleProvider = ({ children }) => {
   const { data: session } = useSession()
@@ -23,6 +20,7 @@ const RoleProvider = ({ children }) => {
   const [bookmarks, setBookmarks] = useState([])
   const [rejected, setRejected] = useState([])
   const [searchedTitle, setSearchedTitle] = useState('')
+  const [jobSearch, setJobSearch] = useState('')
   const [loading, setLoading] = useState(true)
   const [userDetails, setUserDetails] = useState({
     headline: '',
@@ -134,7 +132,7 @@ const RoleProvider = ({ children }) => {
       { name: 'Expired', value: expired },
       { name: 'Active', value: active },
     ])
-  }, [session?.user?.id]) // Add dependencies here
+  }, [session?.user?.id])
 
   useEffect(() => {
     fetchUserJobs()
@@ -213,10 +211,25 @@ const RoleProvider = ({ children }) => {
     }
   }
 
+  const searchJobs = async (value) => {
+    const res = await fetch('/api/jobs')
+    const result = await res.json()
+    const data = result.data
+    const searched = data.filter(
+      (job) =>
+        job.title.toLowerCase().includes(value.toLowerCase()) ||
+        job.company.toLowerCase().includes(value.toLowerCase())
+    )
+    setPostedJobs(searched)
+  }
+
   return (
     <RoleContext.Provider
       value={{
         fetchJobs,
+        jobSearch,
+        setJobSearch,
+        searchJobs,
         loading,
         postedJobs,
         setPostedJobs,

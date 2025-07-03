@@ -88,7 +88,7 @@ const Employer = () => {
             </button>
           </header>
           {/*visits and profile completion*/}
-          <section className="w-full py-[5px] px-[0] grid grid-cols-2 sm:grid-cols-4 sm:gap-[10px] gap-[5px]">
+          <section className="w-full py-[5px] px-[0] grid grid-cols-1 sm:grid-cols-4 sm:gap-[10px] gap-[5px]">
             <Count
               count={user.profileViews}
               title={'Profile Visits'}
