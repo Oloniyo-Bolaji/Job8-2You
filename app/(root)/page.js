@@ -118,7 +118,7 @@ export default function Home() {
                     type="text"
                     placeholder="Search for Job by title or company"
                     value={jobSearch}
-                    onClick={(e) => {
+                    onChange={(e) => {
                       setJobSearch(e.target.value)
                     }}
                     className="w-[80%] h-full border-[1px] border-solid border-[black] outline-[0] rounded-[5px] placeholder:text-[15px] placeholder:p-[5px]"
