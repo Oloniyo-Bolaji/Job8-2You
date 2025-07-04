@@ -1,10 +1,11 @@
 import { db } from "@/app/database";
-import { jobsTable, bookmarksTable } from "@/app/database/schema";
+import { jobsTable, bookmarksTable, usersTable } from "@/app/database/schema"; // Import usersTable
 import { eq, and, sql } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
 export async function POST(req, context) {
-   const { params } = context
+  const { params } = context;
+
   try {
     const jobId = params?.id;
     const { userId } = await req.json();
@@ -16,7 +17,29 @@ export async function POST(req, context) {
       );
     }
 
-    // Check if bookmarked
+    // ✅ Get the user's role
+    const user = await db
+      .select({ role: usersTable.role })
+      .from(usersTable)
+      .where(eq(usersTable.id, userId))
+      .then((res) => res[0]);
+
+    if (!user) {
+      return NextResponse.json(
+        { success: false, error: "User not found" },
+        { status: 404 }
+      );
+    }
+
+    // ❌ Block employers from bookmarking
+    if (user.role === "employer") {
+      return NextResponse.json(
+        { success: false, error: "Employers cannot bookmark jobs" },
+        { status: 403 }
+      );
+    }
+
+    // ✅ Proceed with bookmark logic
     const existing = await db
       .select()
       .from(bookmarksTable)

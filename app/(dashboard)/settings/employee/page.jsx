@@ -54,15 +54,19 @@ const EmployeeSettings = () => {
       <div className="flex flex-col gap-[10px]">
         <div className="">
           <label className="text-[15px] text-[#ccc]">Name</label>
-          <p className="border-black border-solid border-[1px] rounded-[5px] w-full p-[10px]">
-            {session?.user?.name}
-          </p>
+          <input
+            defaultValue={session?.user?.name}
+            className="border-black border-solid border-[1px] rounded-[5px] p-[10px] w-full outline-[0] "
+            type="text"
+          />
         </div>
         <div className="relative">
           <label className="text-[15px] text-[#ccc]">Email</label>
-          <p className="border-black border-solid border-[1px] rounded-[5px] w-full p-[10px]">
-            {session?.user?.email}
-          </p>
+          <input
+            defaultValue={session?.user?.email}
+            className="border-black border-solid border-[1px] rounded-[5px] p-[10px] w-full outline-[0] "
+            type="text"
+          />
         </div>
         <div className="relative">
           <label className="text-[15px] text-[#ccc]">Headline</label>
@@ -132,7 +136,9 @@ const EmployeeSettings = () => {
         </div>
         <div>
           <label className="text-[15px] text-[#ccc]">Upload your resume</label>
-          <Upload onSuccess={(resumeUrl) => setUserDetails({...userDetails, resumeURL: resumeUrl})} />
+          <Upload
+            onSuccess={(resumeUrl) => setUserDetails({ ...userDetails, resumeURL: resumeUrl })}
+          />
         </div>
         <div className="m-auto">
           <button

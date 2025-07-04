@@ -185,25 +185,26 @@ const Job = () => {
               <label className="font-bold text-[15px]">Deadline</label>
               <p className="text-[14px]">{job.deadline}</p>
             </div>
-            {job.jobLink ? (
-              <div>
-                <a
-                  href={job.jobLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[18px] text-[#007bff] font-bold"
-                >
-                  Apply Here
-                </a>
-              </div>
+            {getExpiringDate(job.deadline) > 0 ? (
+              job.jobLink ? (
+                <div>
+                  <a
+                    href={job.jobLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[18px] text-[#007bff] font-bold"
+                  >
+                    Apply Here
+                  </a>
+                </div>
+              ) : (
+                <div>
+                  <Upload onSuccess={(resumeUrl) => sendApplication(resumeUrl)} />
+                </div>
+              )
             ) : (
               <div>
-                {/*<label>Upload a copy of your CV/Resume</label>*/}
-                {getExpiringDate(job.deadline) > 0 ? (
-                  <Upload onSuccess={(resumeUrl) => sendApplication(resumeUrl)} />
-                ) : (
-                  <p className="font-bold">Expired</p>
-                )}
+                <p>Expired</p>
               </div>
             )}
           </div>

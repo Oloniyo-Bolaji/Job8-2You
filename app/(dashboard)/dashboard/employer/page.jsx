@@ -83,7 +83,7 @@ const Employer = () => {
           {/*welcome*/}
           <header className="rounded-[10px] w-full flex justify-between items-center bg-[white] py-[10px] px-[10px]">
             <h4 className="font-bold sm:text-[16px] text-[14px]">Welcome back, {user?.name}</h4>
-            <button className="bg-[#007bff] text-[#fff] border-[0] text-[16px] py-[10px] px-[20px] cursor-pointer transition-colors duration-200 ease-in-out">
+            <button className="bg-[#007bff] text-[#fff] border-[0] sm:text-[16px] text-[13px] py-[10px] px-[20px] cursor-pointer transition-colors duration-200 ease-in-out">
               <Link href="/create">New Job</Link>
             </button>
           </header>
@@ -119,7 +119,7 @@ const Employer = () => {
             />
           </section>
           {/*recommendations*/}
-          <section className="w-full flex flex-col bg-[white] gap-[10px] rounded-[10px] p-[10px]">
+          {applications.length > 0 && <section className="w-full flex flex-col bg-[white] gap-[10px] rounded-[10px] p-[10px]">
             <div className="w-full flex justify-between">
               <h3 className="m-[5px] font-bold text-[15px]">Applicants</h3>
               <div className="relative sm:w-[250px] w-[150px] flex items-center">
@@ -128,7 +128,7 @@ const Employer = () => {
                   placeholder="Filter by Job title"
                   value={searchedTitle}
                   onChange={(e) => setSearchedTitle(e.target.value)}
-                  className="w-full border-[black] border-[1px] border-solid rounded-[5px] placeholder:p-[5px] placeholder:text-[15px] focus:outline-[0]"
+                  className="w-full border-[black] border-[1px] border-solid rounded-[5px] placeholder:p-[5px] placeholder:text-[12px] focus:outline-[0]"
                 />
                 <button
                   className="absolute right-2  p-1"
@@ -138,20 +138,16 @@ const Employer = () => {
                 </button>
               </div>
             </div>
-
-            {applications && (
               <EmployerTable applications={applications} changeStatus={changeStatus} />
-            )}
-            {/* */}
-          </section>
-          {chartData && pieData && (
+          </section>}
+          {userJobs.length > 0 && (
             <section className="w-full flex sm:flex-row flex-col gap-[10px] sm:h-[350px] h-full items-start">
               <CustomBarChart chartData={chartData} />
               <CustomPieChart pieData={pieData} />
             </section>
           )}
           <section className="flex sm:flex-row flex-col gap-[10px] items-start">
-            <div className="sm:w-[40%] w-[100%] rounded-[10px] bg-[white] p-[5px]">
+            {userJobs.length > 0 && <div className="sm:w-[40%] w-[100%] rounded-[10px] bg-[white] p-[5px]">
               <h5 className="m-[5px] font-bold text-[15px]">Posted Jobs</h5>
               <div className="w-full flex gap-[5px] flex-col">
                 {userJobs.map((job) => (
@@ -164,7 +160,7 @@ const Employer = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div>}
             {chartData.applications && <CustomLineChart chartData={chartData} />}
           </section>
         </div>

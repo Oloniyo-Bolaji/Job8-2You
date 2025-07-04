@@ -9,8 +9,7 @@ import { MdAttachMoney, MdWorkOutline } from 'react-icons/md'
 import { useSession } from 'next-auth/react'
 import { toast } from 'react-toastify'
 
-
-const JobCard = ({ job , fetchJobs, fetchUserJobs}) => {
+const JobCard = ({ job, fetchJobs, fetchUserJobs }) => {
   const { data: session } = useSession()
   const router = useRouter()
   const pathname = usePathname()
@@ -31,7 +30,7 @@ const JobCard = ({ job , fetchJobs, fetchUserJobs}) => {
 
       const result = await res.json()
       if (result.success) {
-        toast.success("Job Bookmarked")
+        toast.success('Job Bookmarked')
       }
     } catch (err) {
       console.error('Bookmark error:', err)
@@ -71,12 +70,14 @@ const JobCard = ({ job , fetchJobs, fetchUserJobs}) => {
       const result = await response.json()
 
       if (response.ok) {
-        toast.error(result.message) 
-        fetchJobs()
-        fetchUserJobs()
-      } else {
-        console.log('Delete failed:', result.error)
-        toast.error('Delete failed: ' + result.error)
+        toast.error(result.message)
+
+        try {
+          await fetchJobs() 
+          await fetchUserJobs() 
+        } catch (err) {
+          console.error('❌ Error in fetching jobs after delete:', err)
+        }
       }
     } catch (err) {
       console.log('Delete request error:', err)
@@ -144,7 +145,10 @@ const JobCard = ({ job , fetchJobs, fetchUserJobs}) => {
             </p>
           )}
           {pathname !== '/jobs' ? (
-            <button onClick={addBookmark} className=" flex items-center justify-center bg-[#007bff] text-[white] p-[3px] border-[0] text-center">
+            <button
+              onClick={addBookmark}
+              className=" flex items-center justify-center bg-[#007bff] text-[white] p-[3px] border-[0] text-center"
+            >
               <IoBookmarkOutline />
             </button>
           ) : (

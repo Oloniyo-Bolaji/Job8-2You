@@ -4,7 +4,7 @@ import { jobsTable, usersTable } from "@/app/database/schema.js";
 import { eq } from 'drizzle-orm';
 
 export async function GET(req, context) {
-   const { params } = context
+   const { params } = await context
   try {
     if (!params?.id) {
       return NextResponse.json(
@@ -78,23 +78,21 @@ export async function PUT(req) {
 export async function DELETE(req, { params }) {
   const jobId = params?.id;
 
-  console.log("Received params:", params);
-  console.log("Job ID to delete:", jobId);
-
   if (!jobId) {
+    console.log("No Job ID provided");
     return NextResponse.json({ error: "Missing job ID" }, { status: 400 });
   }
 
   try {
     const result = await db.delete(jobsTable).where(eq(jobsTable.id, jobId));
-
-    console.log("Delete result:", result); // result should show affected rows or count
+    console.log("✅ Job deleted. Result:", result);
 
     return NextResponse.json({ message: "Job deleted successfully" });
   } catch (error) {
-    console.error("Delete failed:", error); // this will now give full details
+    console.error("❌ Delete failed:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
 
 

@@ -21,7 +21,7 @@ const CustomBarChart = ({ chartData }) => {
         >
           <XAxis
             dataKey="name"
-            tickFormatter={(name) => (name.length > 10 &&  name.slice(0, 4) + '…' )}
+            tickFormatter={(name) => (name.length > 5 &&  name.slice(0, 4) + '…' )}
           />
           <YAxis />
           <Legend />
