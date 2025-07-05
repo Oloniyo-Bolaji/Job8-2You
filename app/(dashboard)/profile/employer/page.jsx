@@ -67,7 +67,7 @@ const EmployerProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.website}
+                  {user.website ? "Website" : ''}
                 </a>
               </div>
               <div className="flex justify-between p-[5px] items-center border-b-[1px] border-b-[black] border-solid">
@@ -78,7 +78,7 @@ const EmployerProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.x}
+                  {user.x ? "X" : ''}
                 </a>
               </div>
               <div className="flex justify-between p-[5px] items-center border-b-[1px] border-b-[black] border-solid">
@@ -89,7 +89,7 @@ const EmployerProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.instagram}
+                 {user.instagram ? "Instagram" : ''}
                 </a>
               </div>
               <div className="flex justify-between p-[5px] items-center border-b-[1px] border-b-[black] border-solid">
@@ -100,7 +100,7 @@ const EmployerProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.linkedIn}
+                  {user.linkedIn ? "LinkedIn" : ''}
                 </a>
               </div>
             </div>

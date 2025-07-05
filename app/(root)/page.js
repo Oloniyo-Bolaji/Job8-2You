@@ -121,7 +121,7 @@ export default function Home() {
                     onChange={(e) => {
                       setJobSearch(e.target.value)
                     }}
-                    className="w-[80%] h-full border-[1px] border-solid border-[black] outline-[0] rounded-[5px] placeholder:text-[15px] placeholder:p-[5px]"
+                    className="w-[80%] h-full border-[1px] border-solid border-[black] outline-[0] rounded-[5px] sm:placeholder:text-[15px] placeholder:text-[12px] placeholder:p-[5px]"
                   />
                   <button
                     onClick={() => {

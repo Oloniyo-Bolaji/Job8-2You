@@ -13,7 +13,7 @@ import JobCard from '@components/JobCard'
 import Pie from '@components/Pie'
 import EmployeeTable from '@components/EmployeeTable'
 import Count from '@components/Count'
-import RecommendedJob from '@components/RecommendedJob'
+import DashboardCard from '@components/DashboardCard'
 import { Skeleton } from '@mui/material'
 
 const Employee = () => {
@@ -47,17 +47,11 @@ const Employee = () => {
         )
       )
 
-      console.log(recommended)
       setRecommendedJobs(recommended)
     }
 
     fetchJobs()
   }, [user])
-
-  const removeRecommended = (id) => {
-    const newRecommended = recommendedJobs.filter((job) => job.id !== id)
-    setRecommendedJobs(newRecommended)
-  }
 
   useEffect(() => {
     if (user && applications && userJobs && chartData) {
@@ -105,14 +99,16 @@ const Employee = () => {
               <EmployeeTable applications={applications} />
             </section>
           )}
-          <section className="bg-[white] rounded-[10px] p-[5px]">
-            <h3 className="m-[5px] font-bold text-[15px]">Recommended For You</h3>
-            <div className="grid grid grid-cols-1 sm:grid-cols-2 w-full gap-[10px]">
-              {recommendedJobs?.slice(0, 4).map((job, index) => (
-                <RecommendedJob key={index} job={job} removeRecommended={removeRecommended} />
-              ))}
-            </div>
-          </section>
+          {recommendedJobs > 0 && (
+            <section className="bg-[white] rounded-[10px] p-[5px]">
+              <h3 className="m-[5px] font-bold text-[15px]">Recommended For You</h3>
+              <div className="grid grid grid-cols-1 sm:grid-cols-2 w-full gap-[10px]">
+                {recommendedJobs?.slice(0, 4).map((job, index) => (
+                  <DashboardCard key={index} job={job}  />
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       )}
     </div>

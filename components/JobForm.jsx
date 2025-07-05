@@ -224,7 +224,6 @@ const JobForm = ({ job }) => {
             className="w-full h-[35px] rounded-[10px] text-[14px] p-[5px] outline-[0] border-[1px] border-solid border-[#ccc] bg-[white]"
             {...register('jobLink')}
           />
-          {/*<p className="text-[red] text-[12px]">{errors.jobLink?.message}</p>*/}
         </div>
         <div className="flex items-center justify-center">
           <button

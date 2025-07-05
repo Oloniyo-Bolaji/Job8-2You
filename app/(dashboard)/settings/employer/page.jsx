@@ -57,7 +57,8 @@ const EmployerSettings = () => {
         <div className="">
           <label className="text-[15px]">Name</label>
            <input
-            defaultValue={session?.user?.name}
+            value={session?.user?.name}
+            readOnly
             className="border-black border-solid border-[1px] rounded-[5px] p-[10px] w-full outline-[0] "
             type="text"
           />
@@ -65,7 +66,8 @@ const EmployerSettings = () => {
         <div className="relative">
           <label className="text-[15px]">Email</label>
           <input
-            defaultValue={session?.user?.email}
+            value={session?.user?.email}
+            readOnly
             className="border-black border-solid border-[1px] rounded-[5px] p-[10px] w-full outline-[0] "
             type="text"
           />

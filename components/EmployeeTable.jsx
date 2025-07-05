@@ -81,7 +81,7 @@ const EmployeeTable = ({ applications }) => {
   const [page, setPage] = React.useState(0)
   const [rowsPerPage, setRowsPerPage] = React.useState(5)
 
-  // Avoid a layout jump when reaching the last page with empty rows.
+ 
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0
 
   const handleChangePage = (event, newPage) => {
@@ -95,7 +95,7 @@ const EmployeeTable = ({ applications }) => {
 
   const handleStatus = (status) => {
     if (status === 'Pending') {
-      return 'yellow'
+      return 'black'
     } else if (status === 'Accepted') {
       return 'green'
     } else {
@@ -117,36 +117,36 @@ const EmployeeTable = ({ applications }) => {
             backgroundColor: 'e9f2ff',
           },
           '& tr:nth-of-type(even)': {
-            backgroundColor: '#cccccc', // Light gray
+            backgroundColor: 'white', 
           },
           '& tr:nth-of-type(odd)': {
-            backgroundColor: '#eef4ff', // Or any color you want
+            backgroundColor: '#eef4ff', 
           },
         }}
       >
         <TableHead>
           <TableRow>
-            <TableCell sx={{ width: '5%' }}>S/N</TableCell>
-            <TableCell sx={{ width: '20%' }}>Job Title</TableCell>
-            <TableCell sx={{ width: '25%' }}>Company</TableCell>
-            <TableCell sx={{ width: '20%' }}>Status</TableCell>
-            <TableCell sx={{ width: '25%' }}>Application Date</TableCell>
-            <TableCell sx={{ width: '5%' }}></TableCell>
+            <TableCell sx={{ width: '5%' }} align="center">S/N</TableCell>
+            <TableCell sx={{ width: '20%' }} align="center">Job Title</TableCell>
+            <TableCell sx={{ width: '25%' }} align="center">Company</TableCell>
+            <TableCell sx={{ width: '20%' }} align="center">Status</TableCell>
+            <TableCell sx={{ width: '25%' }} align="center">Application Date</TableCell>
+            <TableCell sx={{ width: '5%' }} align="center"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {applications?.map((application, index) => (
             <TableRow key={index}>
-              <TableCell sx={{ width: '5%' }}>{index + 1}</TableCell>
-              <TableCell sx={{ width: '20%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '5%' }} align="center">{index + 1}</TableCell>
+              <TableCell sx={{ width: '20%', fontWeight: 'bold' }} align="center">
                 {application?.job?.title}
               </TableCell>
-              <TableCell sx={{ width: '25%' }}>{application?.job?.company}</TableCell>
-              <TableCell sx={{ width: '20%', color: handleStatus(application.status) }}>{application.status}</TableCell>
-              <TableCell sx={{ width: '25%' }}>
+              <TableCell sx={{ width: '25%' }} align="center">{application?.job?.company}</TableCell>
+              <TableCell sx={{ width: '20%', color: handleStatus(application.status) }} align="center">{application.status}</TableCell>
+              <TableCell sx={{ width: '25%' }} align="center">
                 {new Date(application.appliedAt).toLocaleDateString()}
               </TableCell>
-              <TableCell sx={{ width: '5%' }}>
+              <TableCell sx={{ width: '5%' }} align="center">
                 <EmployeeMenu />
               </TableCell>
             </TableRow>

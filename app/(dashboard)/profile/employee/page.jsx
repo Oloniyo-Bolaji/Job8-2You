@@ -9,7 +9,7 @@ import { RoleContext } from '@app/context'
 import { Skeleton } from '@mui/material'
 
 const EmployeeProfile = () => {
- const { data: session } = useSession()
+  const { data: session } = useSession()
   const { user } = useContext(RoleContext)
   const [loading, setLoading] = useState(true)
 
@@ -66,7 +66,7 @@ const EmployeeProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.resumeURL}
+                  {user.resumeURL ? 'Resume' : ''}
                 </a>
               </div>
               <div className="flex justify-between p-[5px] items-center border-b-[1px] border-b-[black] border-solid">
@@ -77,7 +77,7 @@ const EmployeeProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.x}
+                  {user.x ? 'X' : ''}
                 </a>
               </div>
               <div className="flex justify-between p-[5px] items-center border-b-[1px] border-b-[black] border-solid">
@@ -88,7 +88,7 @@ const EmployeeProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.instagram}
+                  {user.instagram ? 'Instagram' : ''}
                 </a>
               </div>
               <div className="flex justify-between p-[5px] items-center border-b-[1px] border-b-[black] border-solid">
@@ -99,7 +99,7 @@ const EmployeeProfile = () => {
                   rel="noopener noreferrer"
                   className="underline text-[blue]"
                 >
-                  {user.linkedIn}
+                  {user.linkedIn ? "LinkedIn" : ''}
                 </a>
               </div>
             </div>

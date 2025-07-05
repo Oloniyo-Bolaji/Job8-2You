@@ -83,7 +83,7 @@ const RoleProvider = ({ children }) => {
         }),
       })
 
-      const result = await res.json() // ✅ Only read once
+      const result = await res.json() 
 
       if (!res.ok) {
         throw new Error(result?.error || 'Unknown error')
@@ -91,7 +91,7 @@ const RoleProvider = ({ children }) => {
 
       if (result.success) {
         setSaving(false)
-        router.push(`/profile${user.role}`)
+        router.push(`/profile/${user.role}`)
       }
     } catch (err) {
       toast.error('An error occurred while saving: ' + err.message)
@@ -158,7 +158,7 @@ const RoleProvider = ({ children }) => {
       const rejectedApplications = data.filter((d) => d.status === 'Rejected')
       setRejected(rejectedApplications)
     }
-  }, [session?.user?.id]) // only re-create if user id changes
+  }, [session?.user?.id]) 
 
   useEffect(() => {
     fetchApplications()
@@ -222,6 +222,7 @@ const RoleProvider = ({ children }) => {
     )
     setJobSearch("")
     setPostedJobs(searched)
+    console.log(searched)
   }
 
   return (

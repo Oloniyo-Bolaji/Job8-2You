@@ -10,6 +10,7 @@ import { useSession } from 'next-auth/react'
 import Upload from '@components/Upload'
 import { toast } from 'react-toastify'
 import { Skeleton } from '@mui/material'
+import { FiArrowLeft } from 'react-icons/fi'
 
 const Job = () => {
   const [job, setJob] = useState({})
@@ -50,7 +51,7 @@ const Job = () => {
       const result = await res.json()
       if (result.success) {
         toast.success('Application submitted successfully!')
-        router.push('/employeedashboard')
+        router.push('/dashboard/employee')
       } else {
         throw new Error(result.error || 'Something went wrong')
       }
@@ -120,10 +121,15 @@ const Job = () => {
           </div>
         </div>
       ) : (
-        <div className="w-full py-[20px] px-[40px] flex flex-col gap-[10px]">
+        <div className="w-full py-[20px] sm:px-[40px] px-[10px] flex flex-col gap-[10px]">
+          <div>
+            <button onClick={() => router.back()}>
+              <FiArrowLeft />
+            </button>
+          </div>
           <div className="w-full relative">
             <div className="h-[200px] bg-[#007bff] rounded-t-[10px]"></div>
-            <div className="absolute bottom-[3%] left-1/2 transform -translate-x-1/2">
+            <div className="absolute bottom-[4%] left-1/2 transform -translate-x-1/2">
               {job.user?.image && (
                 <Image
                   src={job.user?.image}

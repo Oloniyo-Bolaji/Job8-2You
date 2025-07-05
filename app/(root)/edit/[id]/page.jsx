@@ -24,7 +24,7 @@ const Edit = () => {
   return (
     <div className="create">
       <Header />
-      <main className='w-full px-[50px] py-[20px]'>
+      <main className='w-full sm:px-[50px] px-[10px] py-[20px]'>
         <h2 className='text-[20px] font-bold text-center'>Edit Job Post</h2>
         <JobForm job={job} />
       </main>

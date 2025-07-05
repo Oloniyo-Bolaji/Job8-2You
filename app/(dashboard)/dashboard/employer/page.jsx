@@ -12,10 +12,10 @@ import EmployerTable from '@components/EmployerTable'
 import { RiUserReceived2Line } from 'react-icons/ri'
 import CustomBarChart from '@components/CustomBarChart'
 import CustomPieChart from '@components/CustomPieChart'
-import CustomLineChart from '@components/CustomLineChart'
 import Count from '@components/Count'
 import { CgSearch } from 'react-icons/cg'
 import { Skeleton } from '@mui/material'
+
 
 const Employer = () => {
   const {
@@ -82,7 +82,7 @@ const Employer = () => {
         <div className="dashboard w-full flex flex-col gap-[10px]">
           {/*welcome*/}
           <header className="rounded-[10px] w-full flex justify-between items-center bg-[white] py-[10px] px-[10px]">
-            <h4 className="font-bold sm:text-[16px] text-[14px]">Welcome back, {user?.name}</h4>
+            <h4 className="font-bold sm:text-[16px] text-[14px]">Welcome, {user?.name}</h4>
             <button className="bg-[#007bff] text-[#fff] border-[0] sm:text-[16px] text-[13px] py-[10px] px-[20px] cursor-pointer transition-colors duration-200 ease-in-out">
               <Link href="/create">New Job</Link>
             </button>
@@ -122,7 +122,7 @@ const Employer = () => {
           {applications.length > 0 && <section className="w-full flex flex-col bg-[white] gap-[10px] rounded-[10px] p-[10px]">
             <div className="w-full flex justify-between">
               <h3 className="m-[5px] font-bold text-[15px]">Applicants</h3>
-              <div className="relative sm:w-[250px] w-[150px] flex items-center">
+              <div className="relative sm:w-[250px] w-[100px] flex items-center">
                 <input
                   type="text"
                   placeholder="Filter by Job title"
@@ -146,23 +146,6 @@ const Employer = () => {
               <CustomPieChart pieData={pieData} />
             </section>
           )}
-          <section className="flex sm:flex-row flex-col gap-[10px] items-start">
-            {userJobs.length > 0 && <div className="sm:w-[40%] w-[100%] rounded-[10px] bg-[white] p-[5px]">
-              <h5 className="m-[5px] font-bold text-[15px]">Posted Jobs</h5>
-              <div className="w-full flex gap-[5px] flex-col">
-                {userJobs.map((job) => (
-                  <div
-                    key={job.id}
-                    className="border-b-[1px] border-solid border-b-[black] text-[12px]"
-                  >
-                    <h6 className="font-bold">{job.title}</h6>
-                    <p>{formatDate(job.createdAt)}</p>
-                  </div>
-                ))}
-              </div>
-            </div>}
-            {chartData.applications && <CustomLineChart chartData={chartData} />}
-          </section>
         </div>
       )}
     </div>
